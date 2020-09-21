@@ -1,0 +1,8 @@
+.box {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.8s;
+  box-shadow: 0 5px 5px antiquewhite;
+}

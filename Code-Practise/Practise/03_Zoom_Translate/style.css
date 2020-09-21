@@ -1,0 +1,72 @@
+.container {
+    width: 480px;
+    height: 360px;
+    /* overflow: hidden; */
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+img.image {
+    width: 480px;
+    height: 360px;
+    transition: 0.8s;
+    /* position: absolute; */
+}
+
+.container:hover .image{
+    transform: scale(1.2);
+}
+
+.color {
+    width: 480px;
+    height: 360px;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container:hover .color{
+    opacity: 1;
+}
+
+.text1 {
+    position: absolute;
+    top: 100px;
+    left: -220px;
+    width: 220px;
+    background: white;
+    transition: 0.8s;
+}
+
+.text2 {
+    position: absolute;
+    top: 122px;
+    left: -220px;
+    width: 220px;
+    background: white;
+    transition: 1.0s;
+}
+
+.text3 {
+    position: absolute;
+    top: 144px;
+    left: -220px;
+    width: 220px;
+    background: white;
+    transition: 1.2s;
+}
+
+.container:hover .text1{
+    transform: translateX(230px);
+}
+
+.container:hover .text2{
+    transform: translateX(230px);
+}
+
+.container:hover .text3{
+    transform: translateX(230px);
+}
+

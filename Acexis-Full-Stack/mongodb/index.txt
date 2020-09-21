@@ -1,0 +1,9 @@
+single index
+	db.collection.createIndex( <field>: <type> )
+compound index 
+	db.collection.createIndex( { <field1>: <type>, <field2>: <type2>, ... } )
+text index
+
+
+
+references: https://kipalog.com/posts/Nghe-thuat-index-MongoDB--5-ke-sach-co-the-cac-ha-chua-biet

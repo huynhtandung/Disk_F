@@ -1,0 +1,2 @@
+npm run cypress:open
+npx cypress run --spec //**		//specific file

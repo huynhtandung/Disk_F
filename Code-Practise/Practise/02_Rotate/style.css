@@ -1,0 +1,56 @@
+.father {
+    width: 220px;
+    height: 220px;
+    background: url(image.jpg);
+    background-size: cover;
+    box-shadow: inset 0px 0px 20px 6px white;
+    perspective: 400px;
+    border-radius: 50%;
+}
+
+.child1 {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: white;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+.child2 {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: black;
+    color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+    line-height: 180px;
+    text-align: center;
+    transition: 0.8s;
+    transform: rotateY(-180deg);
+    border-radius: 50%;
+}
+
+.child3 {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: url(image.jpg) -16px -20px;
+    background-size: 211px;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    margin-left: 20px;
+    transition: 0.8s;
+    backface-visibility: hidden;
+    border-radius: 50%;
+}
+
+.father:hover .child3{
+    transform: rotateY(180deg);
+}
+
+.father:hover .child2{
+    transform: rotateY(0);
+}

@@ -1,0 +1,8 @@
+
+type Mutation{
+  createdRe(nameList: String): String
+}
+
+type Subscription {
+  reCreated: String
+}

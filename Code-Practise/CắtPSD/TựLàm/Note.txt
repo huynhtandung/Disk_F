@@ -1,0 +1,2 @@
+Ctrl alt shift S : lưu ảnh web
+Image + Trim = Alt I R : xóa phần xung quanh ảnh

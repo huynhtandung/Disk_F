@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="timer">
+    <div class="timer__controls">
+      <button data-time="20" class="timer__button">20 Secs</button>
+      <button data-time="300" class="timer__button">Work 5</button>
+      <button data-time="900" class="timer__button">Quick 15</button>
+      <button data-time="1200" class="timer__button">Snack 20</button>
+      <button data-time="3600" class="timer__button">Lunch Break</button>
+      <form name="customForm" id="custom">
+        <input type="text" name="minutes" placeholder="Enter Minutes">
+      </form>
+    </div>
+    <div class="display">
+      <h1 class="display__time-left"></h1>
+      <p class="display__end-time"></p>
+    </div>
+  </div>
+
+  <script>
+
+    function convert(seconds){
+      if(seconds < 0) return '00:00'
+      return Math.floor(seconds / 60) + ':' + (seconds - Math.floor(seconds / 60) * 60)
+    }
+
+    const form = document.querySelector('#custom');
+    const timeLeft = document.querySelector('.display__time-left')
+    const beBack = document.querySelector('.display__end-time')
+    let  interval;
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      clearInterval(interval)
+      let minute = Number(document.querySelector('input').value);
+      let seconds = minute * 60;
+      let date = new Date().getTime() + seconds * 1000;
+      timeLeft.textContent = minute + ':00'
+      beBack.textContent = 'Be back ' + new Date(date).getHours() + ':'  + new Date(date).getMinutes()
+      interval = setInterval(()=>{
+        timeLeft.textContent = convert(--seconds);
+      }, 1000)
+    })
+  </script>
+</body>
+</html>

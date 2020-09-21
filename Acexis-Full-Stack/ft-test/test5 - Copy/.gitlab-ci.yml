@@ -1,0 +1,25 @@
+image: docker:19.03.0
+
+variables:
+  DOCKER_TLS_CERTDIR: ""
+
+services:
+  - docker:19.03.0-dind
+stages:
+  - test
+
+test:
+  stage: test
+  tags:
+    - training-test
+  artifacts:
+    expire_in: 8 hour
+    paths:
+      - videos
+    when: always
+  script:
+    - docker network create testnetwork
+    - docker build -t testserver .
+    - docker run --name testserver -d -p 3000:3000 --network testnetwork testserver
+    - sleep 3
+    - docker run --rm --name test5 -e U=$GITLAB_USER_LOGIN -v $(pwd)/videos:/test/cypress/videos --network=testnetwork hvphuong98/acexis-ft-test5

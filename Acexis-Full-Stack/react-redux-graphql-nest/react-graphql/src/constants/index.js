@@ -1,0 +1,2 @@
+export const GET_TEXT_SUCCESS = "GET_TEXT_SUCCESS";
+export const ADD_TEXT_SUCCESS = "ADD_TEXT_SUCCESS";

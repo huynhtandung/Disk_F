@@ -1,0 +1,32 @@
+.container {
+    width: 600px;
+    height: 360px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+img.image {
+    width: 600px;
+    height: 360px;
+    transition: 0.2s;
+}
+
+.block {
+    position: absolute;
+    width: 480px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background-color: pink;
+    transition: 0.8s;
+    margin-left: 60px;
+}
+
+.container:hover .block{
+    transform: translateY(-60px);
+}
+
+.container:hover .image{
+    transform: scale(0.8);
+}

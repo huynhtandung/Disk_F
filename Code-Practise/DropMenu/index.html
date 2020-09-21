@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <style type="text/css">
+            #menu {
+                margin: 50px 50px;
+                width: 200px;
+            }
+            a {
+                text-decoration: none;
+            }
+            #menu li {
+                list-style-type : none;
+                background-color: ghostwhite;
+            }
+            #menu li ul {
+                display : none;
+                background-color: gold;
+                padding: 0px;
+            }
+            #menu li ul li {
+                background-color: gold;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <ul id="menu">
+            <li><a href="">Home</a></li>
+            <li>
+                <a href="#">News</a>
+                <ul>
+                    <li><a href="">Inside</a></li>
+                    <li><a href="">Outside</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+                <ul>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Gmail</a></li>
+                </ul>
+            </li>
+        </ul>
+        <script type="text/javascript">
+            var menu = document.querySelectorAll('#menu li')
+            for(var i = 0 ; i < menu.length ; i++){
+                menu[i].addEventListener('click', function () {
+                    this.children[1].style.display = this.children[1].style.display ===  'block' ? 'none' : 'block'
+                })
+            }
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

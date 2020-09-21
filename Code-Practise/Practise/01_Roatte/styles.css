@@ -1,0 +1,37 @@
+.father {
+    width: 200px;
+    height: 200px;
+    background: url(image.jpg);
+    border-radius: 50%;
+    perspective: 400px;
+    position: relative;
+}
+
+.child1 {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background-color: pink;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 160px;
+}
+
+.child2 {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    background: url(image.jpg) -21px -21px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+    transition: 0.8s;
+    transform-origin: 50% 100%;
+}
+
+.father:hover .child2{
+    transform: rotateX(-180deg);
+}

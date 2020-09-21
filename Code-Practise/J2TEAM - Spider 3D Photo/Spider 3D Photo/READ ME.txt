@@ -1,0 +1,13 @@
+Hướng dẫn:
+
+1. Mở file PSD bằng Photoshop.
+2. Nhìn vào các layer, ẩn thư mục đầu tiên.
+3. Thay thế layer BACKGROUND bằng ảnh nền bạn muốn.
+4. Lưu lại thành file spider.png (lưu cùng thư mục với spider_depth.png).
+5. Upload lên Facebook, kéo cả 2 file spider.png và spider_depth.png vào cùng lúc. Chờ Facebook xử lý hình ảnh 3D...
+
+Rồi nhấn Đăng là được.
+
+* Chia sẻ bởi JUNO_OKYO tại nhóm J2TEAM Community.
+* https://www.facebook.com/groups/j2team.community/
+* https://www.junookyo.com/

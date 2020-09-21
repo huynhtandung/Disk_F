@@ -1,0 +1,21 @@
+type Texting {
+  content: String!
+  roomID: Int
+}
+
+type Query {
+  texting: [Texting]!
+}
+
+type Mutation {
+  createTexting(inputTexting: InputTexting): Texting!
+}
+
+type Subscription {
+  textCreated(roomID: String): Texting
+}
+
+input InputTexting {
+  content: String
+  roomID: Int
+}

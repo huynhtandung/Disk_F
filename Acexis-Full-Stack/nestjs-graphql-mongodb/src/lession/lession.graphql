@@ -1,0 +1,20 @@
+type Lession {
+  id: ID
+  name: String
+  startDate: String
+  endDate: String
+}
+
+type Query {
+  getAllLession: [Lession]
+}
+
+type Mutation {
+  createLession(lession: LessionInput): Lession
+}
+
+input LessionInput {
+  name: String
+  startDate: String
+  endDate: String
+}

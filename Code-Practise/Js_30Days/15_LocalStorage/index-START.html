@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LocalStorage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>LOCAL TAPAS</h2>
+        <p></p>
+        <ul class="plates">
+            <li>Loading Tapas...</li>
+        </ul>
+        <form class="add-items">
+            <input type="text" name="item" placeholder="Item Name" required>
+            <input type="submit" value="+ Add Item">
+        </form>
+    </div>
+
+    <script>
+        const addItems = document.querySelector('.add-items');
+        const itemsList = document.querySelector('.plates');
+        const input = document.querySelector('input');
+        const items = JSON.parse(localStorage.getItem('data')) || [];
+
+        itemsList.innerHTML = items.map((item, key) => {
+            return (`<input data-key='${key}' type='checkbox' ${item.status === true ? 'checked' : ''} /> <span data-key='${key}'>${item.text}</span><br />`)
+        }).join('')
+
+        addItems.addEventListener('submit', () => {
+            items.push({ text: input.value, status: false });
+            localStorage.setItem('data', JSON.stringify(items))
+        })
+
+
+        itemsList.addEventListener('click', (e) => {
+            let key = e.target.dataset.key;
+            items[key].status = !items[key].status;
+            localStorage.setItem('data', JSON.stringify(items))
+        })
+
+    </script>
+
+
+</body>
+
+</html>

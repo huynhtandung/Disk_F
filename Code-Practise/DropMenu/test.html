@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <style type="text/css">
+            #dropdown {
+                width: 200px
+            }
+            #dropdown li{
+                list-style:none;
+                line-height: 30px;
+                background: blue;
+                margin: 2px;
+            }
+
+            #dropdown li a{
+                margin-left: 10px;
+                color: #FFF;
+                text-decoration: none;
+            }
+
+            #dropdown ul{
+                display:none;
+                padding: 0px;
+                background: pink
+            }
+
+            #dropdown ul li{
+                background-color: pink
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <ul id="dropdown">
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Sản phẩm</a>
+                <ul>
+                    <li><a href="#">Gạch cao cấp</a></li>
+                    <li><a href="#">Gạch thủ công</a></li>
+                    <li><a href="#">Gạch hoa văn</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Tin tức</a>
+                <ul>
+                    <li><a href="#">Tin công nghệ</a></li>
+                    <li><a href="#">Tin trong nước</a></li>
+                    <li><a href="#">Tin thời sự</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Dịch vụ</a>
+                <ul>
+                    <li><a href="#">Thiết kế web</a></li>
+                    <li><a href="#">Quảng cáo web</a></li>
+                    <li><a href="#">Thiết kế đồ họa</a></li>
+                </ul>
+            </li>
+        </ul>
+        <script language="javascript">
+
+            // Lấy danh sách menu
+            var menu = document.querySelectorAll('#dropdown > li');
+
+            // Lặp qua từng menu để gán sự kiện click
+            for (var i = 0; i < menu.length; i++)
+            {
+                menu[i].addEventListener("click", function()
+                {
+                    // Ẩn hết menu con
+                   /* var menuList = document.querySelectorAll('#dropdown > li > ul');
+                    for (var j = 0; j < menuList.length; j++) {
+                       menuList[j].style.display = "none";
+                    }*/
+
+                    // Hiển thị menu hiện tại
+                    // đối tượng this chính là thẻ li hiện tại
+                    // nên ta sử dụng hàm childrent để lấy danh sách thẻ con
+                    // mà thẻ ul nằm ở vị trí thứ 2 nên trong mảng con nó
+                    // sẽ có vị trí là 1 (mảng bắt đầu từ 0)
+                    this.children[1].style.display = "block";
+                });
+            }
+
+        </script>
+
+    </body>
+</html>

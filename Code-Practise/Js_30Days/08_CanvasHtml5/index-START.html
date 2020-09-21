@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+<canvas id="draw" width="800" height="800"></canvas>
+<script>
+  let isMouseHold = false;
+  const canvas = document.querySelector('#draw');
+  const ctx = canvas.getContext('2d');
+  canvas.width =  1400;
+  canvas.height = 700;
+
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
+
+  let x, y;
+
+  canvas.addEventListener('mousedown', (e)=> {
+    isMouseHold = true;
+    x = e.offsetX;
+    y = e.offsetY;
+  })
+
+  canvas.addEventListener('mousemove' , (e)=>{
+    if(isMouseHold === true){
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke();
+      x = e.offsetX;
+      y = e.offsetY;
+
+      //color
+      ctx.strokeStyle = `rgba(${Math.random() * 255 }, ${Math.random() * 255 }, ${Math.random() * 255 })`;
+      //line width (1-50)
+      ctx.lineWidth = Math.random() * (75-1) + 1;
+    }
+  })
+
+  canvas.addEventListener('mouseup' , () => isMouseHold = false)
+  canvas.addEventListener('mouseout' , () => isMouseHold = false)
+
+
+</script>
+
+<style>
+  html, body {
+    margin: 0;
+    text-align: center;
+  }
+  canvas{
+    background-color: grey;
+  }
+</style>
+</body>
+</html>
